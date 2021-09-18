@@ -26,8 +26,8 @@ export default function Auth ({match, history}) {
         console.log('Failed:', errorInfo);
       }
     return (
-        <Content style={{ padding: '0 50px' }}>
-        <Layout className="site-layout-background" style={{ padding: '24px 0' }}> 
+        <Content style={{ padding: '50px' }}>
+        <Layout className="site-layout-background" style={{ padding: '50px' }}> 
             <Form
             name="basic"
             labelCol={{ span: 8 }}
