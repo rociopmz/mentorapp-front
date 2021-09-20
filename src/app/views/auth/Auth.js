@@ -1,5 +1,4 @@
-import React,  {Component} from 'react';
-import { Form, Input, Button, Checkbox, Layout } from 'antd';
+import { Form, Input, Button, Checkbox, Layout, Row, Col } from 'antd';
 import {loginEndpoint, signupEndpoint, signupGoogle} from '../../services/auth-ws'
 
 const {Content} = Layout
@@ -42,14 +41,14 @@ export default function Auth ({match, history}) {
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
                 >
-                    <Input />
+                    <Input placeholder="Jon Doe" />
                 </Form.Item>
 
                 {match.path === "/signup" &&  <Form.Item 
                 label="Email"
                 name="email"
                 >
-                    <Input/>
+                    <Input placeholder="jondoe@ejemplo.com" />
                     
                 </Form.Item>}
 

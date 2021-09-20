@@ -17,6 +17,7 @@ export default function Profile () {
             if (values.role===true){
                 values.role = "mentor"
             }
+            values.role= "mentee"
             values["_id"]=user._id
             const{data}= await updateUser(values)
             localStorage.setItem("user", JSON.stringify(data.result))
