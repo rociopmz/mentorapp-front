@@ -10,7 +10,10 @@ const CardComponent = ({email, objective,profile_picture, username, aboutme}) =>
 
   const getData = () =>{
     const localUser = JSON.parse(localStorage.getItem("user"))
-    setUser (localUser)
+    if(localUser){
+    setUser (localUser)  
+    }
+    
 }
 useEffect(()=>{ 
    getData()
@@ -39,6 +42,7 @@ useEffect(()=>{
     <Meta title={"objetivos"} />
     <Meta description={ <div style= {{display:"flex", flexDirection:"column"}}>{objective.map((item, index)=> <span>{item}</span>)}</div>} />
     {
+      Object.keys(user).lenght &&
       user.role=== "mentee" && 
       <>
       <Button>Crear Reseña</Button>
