@@ -27,9 +27,9 @@ const Navbar = ({newUser, onLogout}) => (
         </Link>
         </Menu.Item>  
         <Menu.Item>
-        <Link onClick={onLogout} >
+        <span onClick={onLogout} >
       Logout
-      </Link>
+      </span>
         </Menu.Item>
 
         </>} 

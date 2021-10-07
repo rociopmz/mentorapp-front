@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
+import { AppCtxProv } from './app/hooks/auth-hooks';
 
 const WithRouter = () => (
 
   <BrowserRouter>
-    <App/>
+    <AppCtxProv>
+      <App/>
+    </AppCtxProv>
   </BrowserRouter>
+  
 )
 //substitute original content in ReactDOM.render
 ReactDOM.render(

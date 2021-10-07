@@ -1,10 +1,14 @@
 import { Form, Input, Button, Checkbox, Layout, Row, Col } from 'antd';
 import {loginEndpoint, signupEndpoint, signupGoogle} from '../../services/auth-ws'
+import { useContext} from 'react'; 
+import {Ctx} from '../../hooks/auth-hooks'
+
 
 const {Content} = Layout
 
 
 export default function Auth ({match, history}) {
+    const { login } = useContext(Ctx)
     const onFinish = async (values) => {
      try{
         const create = match.path === '/signup' ? signupEndpoint : loginEndpoint
@@ -13,6 +17,7 @@ export default function Auth ({match, history}) {
         if (match.path === "/signup") {
             history.push("/login")
         }else{
+            login (data.user)
             history.push("/profile")
         }
      }catch(error){
